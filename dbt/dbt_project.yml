@@ -16,4 +16,7 @@ clean-targets: ["target", "dbt_packages"]
 
 models:
   wine_reviews_pipeline:
-    +materialized: view
+    stg:
+      +materialized: view
+    mart:
+      +materialized: table
