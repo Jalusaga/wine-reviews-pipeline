@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: stg_wine_reviews
+    description: "Cleaned and typed wine reviews derived from RAW."
+    columns:
+      - name: country
+        tests:
+          - not_null
+
+      - name: province
+        tests:
+          - not_null
+
+      - name: description
+        tests:
+          - not_null
+
+      - name: designation
+        tests:
+          - not_null
+
+      - name: variety
+        tests:
+          - not_null
+
+      - name: winery
+        tests:
+          - not_null
+
+      - name: points
+        tests:
+          - not_null

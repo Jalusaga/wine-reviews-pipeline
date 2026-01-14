@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: mart_variety_price_analysis
+    description: "Aggregations by wine variety to compare representation (review_count) vs pricing (avg/median) and total price exposure."
+    columns:
+      - name: variety
+        description: "Grape variety."
+        tests:
+          - not_null
+
+      - name: review_count
+        description: "Number of reviews for the variety (filtered to >= 50 in the model)."
+        tests:
+          - not_null
+
+      - name: avg_price
+        description: "Average imputed price for the variety."
+        tests:
+          - not_null
+
+      - name: median_price
+        description: "Median imputed price for the variety."
+        tests:
+          - not_null
+
+      - name: price_exposure
+        description: "Sum of prices across reviews (aggregate listed price exposure, not revenue)."
+        tests:
+          - not_null

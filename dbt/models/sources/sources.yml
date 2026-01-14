@@ -1,0 +1,32 @@
+version: 2
+
+sources:
+  - name: raw
+    database: DEMO_PIPELINE
+    schema: RAW
+    tables:
+      - name: WINE_REVIEWS_RAW
+        description: "Raw snapshot loaded from Kaggle wine reviews CSV via Python PUT/COPY."
+        columns:
+          - name: ROW_ID
+            description: "Row index column from the original CSV (empty header in file)."
+          - name: COUNTRY
+            description: "Country of origin (nullable for a few rows)."
+          - name: DESCRIPTION
+            description: "Wine review text."
+          - name: DESIGNATION
+            description: "Wine designation label (often null)."
+          - name: POINTS
+            description: "Wine score as string in RAW."
+          - name: PRICE
+            description: "Wine price as string in RAW (nullable)."
+          - name: PROVINCE
+            description: "Province/state (nullable for a few rows)."
+          - name: REGION_1
+            description: "Primary region (often null)."
+          - name: REGION_2
+            description: "Secondary region (often null)."
+          - name: VARIETY
+            description: "Grape variety."
+          - name: WINERY
+            description: "Winery name."
