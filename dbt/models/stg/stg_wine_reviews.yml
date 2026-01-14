@@ -1,0 +1,38 @@
+version: 2
+
+models:
+  - name: stg_wine_reviews
+    description: "Cleaned and typed wine reviews data derived from RAW. Applies casting, null handling, and deduplication."
+    columns:
+      - name: country
+        description: "Country of origin."
+        tests:
+          - not_null
+
+      - name: province
+        description: "Province/state."
+        tests:
+          - not_null
+
+      - name: description
+        description: "Review text."
+        tests:
+          - not_null
+
+      - name: variety
+        description: "Grape variety."
+        tests:
+          - not_null
+
+      - name: winery
+        description: "Winery name."
+        tests:
+          - not_null
+
+      - name: points
+        description: "Wine score as integer."
+        tests:
+          - not_null
+
+      - name: price
+        description: "Wine price as numeric. Nulls handled via median imputation in STG."
