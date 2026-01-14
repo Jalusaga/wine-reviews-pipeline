@@ -1,6 +1,6 @@
 # Wine Reviews ELT Pipeline (Kaggle → Snowflake → dbt)
 
-This project implements a realistic ELT data pipeline using a modern data stack.
+This project implements an ELT pipeline using Python, Snowflake, and dbt to analyze wine pricing trends by grape variety. Raw data is ingested as an idempotent snapshot from Kaggle, then transformed in Snowflake using dbt. Data quality is enforced through schema tests and controlled imputation strategies. A mart layer aggregates price exposure and central tendency metrics to distinguish between popularity-driven and price-driven varieties. The design emphasizes reproducibility, transparency, and realistic data-engineering practices.
 
 # Technologies used
 
@@ -12,12 +12,12 @@ This project implements a realistic ELT data pipeline using a modern data stack.
 
 - Kaggle Wine Reviews dataset as the data source
 
-
 ---
 
 The goal of this project is to demonstrate production-style data engineering practices such as idempotent loads, layered data modeling, and data quality enforcement.
 
 # ARCHITECTURE OVERVIEW
+
 ```
 Kaggle Dataset
 ↓
@@ -85,6 +85,7 @@ Metrics include:
 - price exposure (not revenue)
 
 ## PROJECT STRUCTURE
+
 ```
 wine-reviews-pipeline/
 │
